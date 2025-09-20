@@ -56,7 +56,10 @@ function JobDetailHeader() {
         </div>
 
         <div className="flex justify-start items-start gap-2.5">
-          <div className="px-3 py-2.5 bg-slate-200 rounded-lg flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-slate-300">
+          <div
+            className="px-3 py-2.5 bg-slate-200 rounded-lg flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-slate-300"
+            onClick={() => navigate("/")}
+          >
             <div className="text-slate-800 text-sm font-medium leading-tight">
               Close Application
             </div>
