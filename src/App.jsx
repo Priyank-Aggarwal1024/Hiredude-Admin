@@ -30,23 +30,7 @@ function App() {
               >
                 <Route index element={<Application />} />
                 <Route path="create-job" element={<CreateJob />} />
-                <Route path="job/:jobId" element={<Outlet />}>
-                  <Route index element={<JobDetailPage />} />
-                  <Route
-                    path="total-applications"
-                    element={<JobDetailPage />}
-                  />
-                  <Route path="assignment-sent" element={<JobDetailPage />} />
-                  <Route
-                    path="assignment-submission"
-                    element={<JobDetailPage />}
-                  />
-                  <Route path="interview" element={<JobDetailPage />} />
-                  <Route
-                    path="shortlisted-candidates"
-                    element={<JobDetailPage />}
-                  />
-                </Route>
+                <Route path="job/:jobId/:filter" element={<JobDetailPage />} />
               </Route>
 
               <Route path="/hired-candidates" element={<CommonLayout />} />

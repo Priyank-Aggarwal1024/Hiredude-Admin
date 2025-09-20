@@ -5,7 +5,11 @@ import SelectButton from "./SelectButton";
 import DateInput from "./DateInput";
 import ToggleButton from "./ToggleButton";
 
-function JobDetailHeader({ onChange = () => {}, value = false }) {
+function JobDetailHeader({
+  onChange = () => {},
+  value = false,
+  applicationData = {},
+}) {
   const navigate = useNavigate();
 
   return (
@@ -18,40 +22,49 @@ function JobDetailHeader({ onChange = () => {}, value = false }) {
         <div className="flex-1 flex flex-col justify-start items-start gap-2 min-w-[240px]">
           <div className="w-full flex justify-start items-center gap-2 flex-wrap">
             <div className="text-neutral-800 text-base font-medium leading-tight">
-              Frontend Developer
+              {applicationData.jobTitle || ""}
             </div>
             <div className="w-px h-5 bg-neutral-300"></div>
             <div className="flex justify-start items-center gap-1">
               <div className="text-neutral-700 text-sm font-normal leading-tight">
-                Zomato
+                {applicationData.companyName || ""}
               </div>
               <img
                 src={link}
                 alt="Company Link"
+                onClick={() =>
+                  window.open(applicationData.companyLink, "_blank")
+                }
                 className="cursor-pointer [&:hover]:opacity-80 w-3.5 h-3.5"
               />
             </div>
-            <div className="w-11 h-5 px-1 py-1 bg-green-100 rounded-sm flex justify-center items-center gap-1 overflow-hidden">
+            <div
+              className={`w-11 h-5 px-1 py-1 ${
+                applicationData.jobStatus === "Open"
+                  ? "bg-green-100"
+                  : "bg-red-100"
+              } rounded-sm flex justify-center items-center gap-1 overflow-hidden`}
+            >
               <div className="text-success-900 text-xs font-medium leading-3">
-                Open
+                {applicationData.jobStatus || "Open"}
               </div>
             </div>
           </div>
           <div className="flex justify-start items-center gap-2 flex-wrap">
             <div className="text-neutral-700 text-sm font-normal leading-tight">
-              Q7X3B9K
+              {applicationData.jobId || ""}
             </div>
             <div className="w-1 h-1 bg-neutral-300 rounded-full"></div>
             <div className="text-neutral-700 text-sm font-normal leading-tight">
-              24 Aug 2025, 10:00AM
+              {applicationData.jobPostedOn || ""}
             </div>
             <div className="w-1 h-1 bg-neutral-300 rounded-full"></div>
             <div className="text-neutral-700 text-sm font-normal leading-tight">
-              Internship
+              {applicationData.jobType || ""}
             </div>
             <div className="w-1 h-1 bg-neutral-300 rounded-full"></div>
             <div className="text-neutral-700 text-sm font-normal leading-tight">
-              ₹20K -25K
+              {applicationData.jobSalary || ""}
             </div>
           </div>
         </div>
@@ -73,7 +86,10 @@ function JobDetailHeader({ onChange = () => {}, value = false }) {
               Close Application
             </div>
           </div>
-          <div className="px-3 py-2.5 bg-white rounded-lg shadow-custom border border-slate-200 flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-gray-50">
+          <div
+            className="px-3 py-2.5 bg-white rounded-lg shadow-custom border border-slate-200 flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-gray-50"
+            onClick={() => window.open(applicationData.jdLink, "_blank")}
+          >
             <div className="text-slate-800 text-sm font-medium leading-tight">
               View JD
             </div>
@@ -83,7 +99,15 @@ function JobDetailHeader({ onChange = () => {}, value = false }) {
     </div>
   );
 }
-function JobDetailNavigation() {
+function JobDetailNavigation({
+  applicationData = {
+    totalApplications: 0,
+    totalShortlisted: 0,
+    totalInterviewed: 0,
+    assignmentSubmissions: 0,
+    assignmentSent: 0,
+  },
+}) {
   const params = useParams();
   const location = window.location.pathname;
 
@@ -111,7 +135,7 @@ function JobDetailNavigation() {
           Total Applications
         </div>
         <div className="w-full text-neutral-800 text-3xl font-semibold leading-9">
-          380
+          {applicationData.totalApplications || 0}
         </div>
       </NavLink>
 
@@ -126,7 +150,7 @@ function JobDetailNavigation() {
           <img src={whatsapp} alt="WhatsApp" />
         </div>
         <div className="w-full text-neutral-800 text-3xl font-semibold leading-9">
-          300
+          {applicationData.assignmentSent || 0}
         </div>
       </NavLink>
 
@@ -138,7 +162,7 @@ function JobDetailNavigation() {
           Assignment submission
         </div>
         <div className="w-full text-neutral-800 text-3xl font-semibold leading-9">
-          80
+          {applicationData.assignmentSubmissions || 0}
         </div>
       </NavLink>
 
@@ -147,7 +171,7 @@ function JobDetailNavigation() {
           Interview
         </div>
         <div className="w-full text-neutral-800 text-3xl font-semibold leading-9">
-          60
+          {applicationData.totalInterviewed || 0}
         </div>
       </NavLink>
 
@@ -159,7 +183,7 @@ function JobDetailNavigation() {
           Shortlisted Candidates
         </div>
         <div className="w-full text-neutral-800 text-3xl font-semibold leading-9">
-          38
+          {applicationData.totalShortlisted || 0}
         </div>
       </NavLink>
     </div>
