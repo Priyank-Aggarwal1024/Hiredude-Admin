@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f9f9f9;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+}
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-[12px] h-[12px];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-white rounded-[18px] outline-1 outline-offset-[-1px] outline-slate-200;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-r from-[#4cb7a3] to-blue-700 rounded-[25px];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply from-[#3fa18f] to-blue-600;
+  }
+}
