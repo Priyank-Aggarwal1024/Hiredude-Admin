@@ -200,7 +200,7 @@ function Application() {
                         ref={actionRef}
                       >
                         <JobActionPopup
-                          appLink={row?.applicationUrl}
+                          appLink={`/job/${row?.appId}`}
                           assignmentLink={row?.viewAssignmentUrl}
                           submissionLink={row?.submissionUrl}
                         />
