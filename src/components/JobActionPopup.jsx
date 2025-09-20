@@ -20,7 +20,6 @@ const JobActionPopup = ({
   const LinkItem = ({ link, label, type }) => (
     <a
       href={link}
-      target="_blank"
       rel="noopener noreferrer"
       className="group cursor-pointer w-full px-2 py-1.5 rounded-md flex justify-between items-center text-slate-800 text-sm font-medium [&:hover]:bg-slate-100 transition"
     >
