@@ -18,7 +18,9 @@ export default function Sidebar() {
           to="/"
           className={({ isActive }) =>
             `p-2.5 rounded-lg flex items-center gap-2 w-full ${
-              isActive ? "bg-slate-100" : "bg-white"
+              isActive || window.location.pathname.includes("/job")
+                ? "bg-slate-100"
+                : "bg-white"
             }`
           }
         >

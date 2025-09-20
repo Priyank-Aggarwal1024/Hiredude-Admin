@@ -8,6 +8,7 @@ import JobActionPopup from "../components/JobActionPopup";
 import useClickOutside from "../hooks/useClickOutside";
 import { useNavigate } from "react-router-dom";
 import DateInput from "../components/DateInput";
+import SelectButton from "../components/SelectButton";
 
 function Application() {
   const { jobs } = useSelector((state) => state.jobs);
@@ -61,23 +62,19 @@ function Application() {
                 </span>
               </div>
             </div>
-
-            <div className="relative">
-              <select
-                value={statusValue}
-                onChange={(e) => setStatusValue(e.target.value)}
-                className="px-3 py-2 bg-slate-100 rounded-lg h-10 min-w-[90px] text-slate-800 text-sm font-medium leading-tight outline-none cursor-pointer appearance-none pr-8"
-              >
-                <option value="Status">Status</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-                <option value="Pending">Pending</option>
-                <option value="Completed">Completed</option>
-              </select>
-              <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                <img src={arrowDown} alt="Arrow Down" />
-              </div>
-            </div>
+            <SelectButton
+              onSelect={setStatusValue}
+              options={[
+                { label: "Status", value: "Status" },
+                { label: "Active", value: "Active" },
+                { label: "Inactive", value: "Inactive" },
+                { label: "Pending", value: "Pending" },
+                { label: "Completed", value: "Completed" },
+              ]}
+              selectedValue={statusValue}
+              minWidth={128}
+              placeholder="Status"
+            />
             <DateInput dateTime={dateTime} setDateTime={setDateTime} />
           </div>
         </div>

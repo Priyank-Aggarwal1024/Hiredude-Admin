@@ -3,14 +3,15 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { download, lArrow, link, search, whatsapp } from "../assets";
 import SelectButton from "./SelectButton";
 import DateInput from "./DateInput";
+import ToggleButton from "./ToggleButton";
 
-function JobDetailHeader() {
+function JobDetailHeader({ onChange = () => {}, value = false }) {
   const navigate = useNavigate();
 
   return (
     <div className="w-full px-6 py-5 bg-neutral-50 flex flex-col items-center gap-5 h-fitsticky top-0 z-40">
       <div className="w-full min-w-48 rounded-lg flex justify-start items-center gap-3 overflow-hidden flex-wrap">
-        <div className="p-2 cursor-pointer" onClick={() => navigate(-1)}>
+        <div className="p-2 cursor-pointer" onClick={() => navigate("/")}>
           <img src={lArrow} alt="Back Arrow" />
         </div>
 
@@ -56,6 +57,14 @@ function JobDetailHeader() {
         </div>
 
         <div className="flex justify-start items-start gap-2.5">
+          {window.location.pathname.includes("shortlisted-candidates") && (
+            <div className="w-60 h-12 px-4 inline-flex justify-start items-center gap-1">
+              <div className="text-[#334155] text-base font-normal leading-tight">
+                Enable Calling Mode
+              </div>
+              <ToggleButton onChange={onChange} value={value} />
+            </div>
+          )}
           <div
             className="px-3 py-2.5 bg-slate-200 rounded-lg flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-slate-300"
             onClick={() => navigate("/")}
@@ -76,6 +85,7 @@ function JobDetailHeader() {
 }
 function JobDetailNavigation() {
   const params = useParams();
+  const location = window.location.pathname;
 
   const linkClass = ({ isActive }) =>
     `flex-1 p-4 rounded-lg flex flex-col justify-start items-start gap-1.5 overflow-hidden
@@ -89,7 +99,13 @@ function JobDetailNavigation() {
     <div className="w-full px-6 grid grid-cols-5 gap-2">
       <NavLink
         to={`/job/${params.jobId}/total-applications`}
-        className={linkClass}
+        className={({ isActive }) =>
+          `flex-1 p-4 rounded-lg flex flex-col justify-start items-start gap-1.5 overflow-hidden ${
+            isActive || location === `/job/${params.jobId}`
+              ? "border-2 border-blue-700 bg-sky-50"
+              : "border border-slate-200 bg-white"
+          }`
+        }
       >
         <div className="w-full text-neutral-500 text-base font-normal leading-tight">
           Total Applications
@@ -190,10 +206,12 @@ function JobDetailTableHeader({
           minWidth={192}
           placeholder="Select filter"
         />
-        <div className="w-20 h-10 px-3 py-2 rounded-lg border border-emerald-400 flex justify-center items-center gap-1 cursor-pointer [&:hover]:bg-gray-50">
-          <img src={download} alt="Download" />
-          <div className="text-blue-700 text-sm font-medium leading-tight">
-            Export
+        <div className="p-[1px] rounded-lg bg-gradient-to-r from-[#4CB7A3] to-[#1D4ED8] cursor-pointer">
+          <div className="w-20 h-10 px-3 py-2 rounded-lg bg-white flex justify-center items-center gap-1 hover:bg-gray-50">
+            <img src={download} alt="Download" />
+            <div className="text-blue-700 text-sm font-medium leading-tight">
+              Export
+            </div>
           </div>
         </div>
       </div>
