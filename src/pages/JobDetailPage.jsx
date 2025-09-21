@@ -38,6 +38,62 @@ const applicationData = {
       studentId: "T9LK2QJ",
     },
   ],
+  submission: [
+    {
+      name: "Khushi Prasad",
+      id: "X8CV1LT",
+      role: "Graphic Designer",
+      experience: "1-2 Years",
+      email: "imsalmaanahmed@gmail.com",
+      phone: "8768678678",
+      location: "Delhi, Gurgaon",
+      portfolio: "Portfolio Link",
+      status: "Student, Freelance",
+      salary: "3 LPA",
+      noticePeriod: "1 week",
+      workMode: "Internship, Freelance",
+      workType: "Onsite, Remote",
+      skills: [
+        "Photoshop",
+        "Illustrator",
+        "After Effects",
+        "Figma",
+        "InDesign",
+      ],
+      tools: ["Photoshop", "Illustrator", "After Effects"],
+      assignmentStatus: "Submitted",
+      interviewStatus: "Pending",
+      profileStatus: "Shortlisted",
+      interviewScore: 78,
+    },
+    {
+      name: "Khushi Prasad",
+      id: "X8CV1LT",
+      role: "Graphic Designer",
+      experience: "1-2 Years",
+      email: "imsalmaanahmed@gmail.com",
+      phone: "8768678678",
+      location: "Delhi, Gurgaon",
+      portfolio: "Portfolio Link",
+      status: "Student, Freelance",
+      salary: "3 LPA",
+      noticePeriod: "1 week",
+      workMode: "Internship, Freelance",
+      workType: "Onsite, Remote",
+      skills: [
+        "Photoshop",
+        "Illustrator",
+        "After Effects",
+        "Figma",
+        "InDesign",
+      ],
+      tools: ["Photoshop", "Illustrator", "After Effects"],
+      assignmentStatus: "Submitted",
+      interviewStatus: "Pending",
+      profileStatus: "Shortlisted",
+      interviewScore: 78,
+    },
+  ],
 };
 const JobDetailPage = () => {
   const { jobId, filter } = useParams();
@@ -71,16 +127,15 @@ const JobDetailPage = () => {
   }, [selectedFilter]);
 
   return (
-    <div className="w-full h-screen shadow-sm overflow-y-auto relative flex flex-col">
+    <div className="w-full h-screen flex flex-col">
       <JobDetailHeader
         onChange={setEnableCalling}
         value={enableCalling}
         applicationData={applicationData}
       />
       <JobDetailNavigation applicationData={applicationData} />
-
-      <div className="w-full flex-1 px-6 pt-3 pb-6 flex flex-col items-start gap-6">
-        <div className="w-full flex-1 rounded-xl border border-neutral-200 flex flex-col items-start overflow-hidden">
+      <div className="flex-1 flex flex-col overflow-hidden px-6 pt-3 pb-6">
+        <div className="flex-1 rounded-xl border border-neutral-200 flex flex-col overflow-hidden">
           <JobDetailTableHeader
             searchValue={searchValue}
             setSearchValue={setSearchValue}
@@ -90,8 +145,12 @@ const JobDetailPage = () => {
             setSelectedFilter={setSelectedFilter}
             options={filterOptions}
           />
-          <div className="w-full flex-1 relative bg-white overflow-x-auto custom-scrollbar">
-            <JobDataTables jobId={jobId} total={applicationData.total} />
+          <div className="flex-1 relative bg-white overflow-x-auto overflow-y-auto custom-scrollbar">
+            <JobDataTables
+              jobId={jobId}
+              total={applicationData.total}
+              submission={applicationData.submission}
+            />
           </div>
         </div>
       </div>

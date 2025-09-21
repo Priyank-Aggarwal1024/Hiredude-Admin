@@ -146,7 +146,7 @@ const CreateJob = () => {
           <div className="flex flex-wrap gap-3">
             <button
               onClick={() => handleCopy("https://example.com/application")}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 [&:hover]:bg-slate-300 transition"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 transition"
             >
               <span className="text-slate-800 text-sm font-medium">
                 Application URL
@@ -156,7 +156,7 @@ const CreateJob = () => {
 
             <button
               onClick={() => handleCopy("https://example.com/submission")}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 [&:hover]:bg-slate-300 transition"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-300 transition"
             >
               <span className="text-slate-800 text-sm font-medium">
                 Submission URL
@@ -381,7 +381,7 @@ const CreateJob = () => {
                         <button
                           type="button"
                           onClick={() => handleRemoveSkill(skill)}
-                          className="w-3 h-3 relative flex items-center justify-center [&:hover]:bg-red-100 rounded-full"
+                          className="w-3 h-3 relative flex items-center justify-center hover:bg-red-100 rounded-full"
                         >
                           <img
                             src={cross}

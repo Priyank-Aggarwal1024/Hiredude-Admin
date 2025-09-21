@@ -46,7 +46,7 @@ function SelectButton({
                 className={`pl-2 pr-2.5 py-1.5 rounded-md flex justify-start items-center cursor-pointer ${
                   selectedValue === option.value
                     ? "bg-slate-300"
-                    : "bg-white [&:hover]:bg-neutral-100"
+                    : "bg-white hover:bg-neutral-100"
                 } ${index !== options.length - 1 ? "mb-1" : ""}`}
                 onClick={() => handleSelect(option.value)}
               >

@@ -36,7 +36,7 @@ function Select({
             <div
               key={idx}
               onClick={() => handleSelect(option)}
-              className="px-3 py-2 [&:hover]:bg-gray-100 cursor-pointer"
+              className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
             >
               {option}
             </div>

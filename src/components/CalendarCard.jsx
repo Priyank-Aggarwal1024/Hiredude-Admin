@@ -81,13 +81,13 @@ const DateTimePicker = ({ value, onChange }) => {
         <div className="flex items-center gap-7">
           <button
             onClick={handlePrevMonth}
-            className="text-blue-500 text-lg [&:hover]:opacity-70 cursor-pointer"
+            className="text-blue-500 text-lg hover:opacity-70 cursor-pointer"
           >
             <img src={arrow} alt="Previous Arrow" />
           </button>
           <button
             onClick={handleNextMonth}
-            className="text-blue-500 text-lg [&:hover]:opacity-70 cursor-pointer"
+            className="text-blue-500 text-lg hover:opacity-70 cursor-pointer"
           >
             <img src={arrow} alt="Next Arrow" className="rotate-180" />
           </button>
@@ -125,11 +125,7 @@ const DateTimePicker = ({ value, onChange }) => {
               onClick={() => handleDateClick(day)}
               className={`w-10 h-10 flex items-center justify-center rounded-full text-sm transition cursor-pointer
                 ${isToday ? "text-blue-500 font-semibold" : "text-black"}
-                ${
-                  isSelected
-                    ? "bg-blue-500 text-white"
-                    : "[&:hover]:bg-blue-100"
-                }
+                ${isSelected ? "bg-blue-500 text-white" : "hover:bg-blue-100"}
               `}
             >
               {day}

@@ -65,7 +65,7 @@ function ValidateOtp({ loading, handleValidateOtp, onChangeOtp }) {
           <div className="h-24" />
         </div>
         <button
-          className={`h-16 cursor-pointer px-9 py-5 bg-gradient-to-r from-[#4cb7a3] to-blue-700 rounded-xl flex justify-center items-center gap-4 w-full overflow-hidden [&:hover]:opacity-90 ${
+          className={`h-16 cursor-pointer px-9 py-5 bg-gradient-to-r from-[#4cb7a3] to-blue-700 rounded-xl flex justify-center items-center gap-4 w-full overflow-hidden hover:opacity-90 ${
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
           type="submit"

@@ -18,6 +18,14 @@ import download from "./download.svg";
 import tick from "./tick.svg";
 import doc from "./doc.svg";
 import linkedin from "./linkedin.svg";
+import whatsappGray from "./whatsapp-gray.svg";
+import location from "./location.svg";
+import email from "./email.svg";
+import web from "./web.svg";
+import calendar from "./calendar.svg";
+import rupee from "./rupee.svg";
+import user from "./user.svg";
+
 export {
   logo,
   eye,
@@ -39,4 +47,11 @@ export {
   tick,
   doc,
   linkedin,
+  whatsappGray,
+  location,
+  email,
+  web,
+  calendar,
+  rupee,
+  user,
 };

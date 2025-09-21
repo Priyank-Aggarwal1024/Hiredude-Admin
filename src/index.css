@@ -35,4 +35,11 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply from-[#3fa18f] to-blue-600;
   }
+  .text-gradient {
+    background: var(--Linear, linear-gradient(90deg, #4cb7a3 0%, #1d4ed8 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
+@custom-variant hover (&:hover);

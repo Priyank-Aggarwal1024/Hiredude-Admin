@@ -35,7 +35,7 @@ function JobDetailHeader({
                 onClick={() =>
                   window.open(applicationData.companyLink, "_blank")
                 }
-                className="cursor-pointer [&:hover]:opacity-80 w-3.5 h-3.5"
+                className="cursor-pointer hover:opacity-80 w-3.5 h-3.5"
               />
             </div>
             <div
@@ -79,7 +79,7 @@ function JobDetailHeader({
             </div>
           )}
           <div
-            className="px-3 py-2.5 bg-slate-200 rounded-lg flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-slate-300"
+            className="px-3 py-2.5 bg-slate-200 rounded-lg flex justify-center items-center gap-2 cursor-pointer hover:bg-slate-300"
             onClick={() => navigate("/")}
           >
             <div className="text-slate-800 text-sm font-medium leading-tight">
@@ -87,7 +87,7 @@ function JobDetailHeader({
             </div>
           </div>
           <div
-            className="px-3 py-2.5 bg-white rounded-lg shadow-custom border border-slate-200 flex justify-center items-center gap-2 cursor-pointer [&:hover]:bg-gray-50"
+            className="px-3 py-2.5 bg-white rounded-lg shadow-custom border border-slate-200 flex justify-center items-center gap-2 cursor-pointer hover:bg-gray-50"
             onClick={() => window.open(applicationData.jdLink, "_blank")}
           >
             <div className="text-slate-800 text-sm font-medium leading-tight">

@@ -30,6 +30,7 @@ function App() {
               >
                 <Route index element={<Application />} />
                 <Route path="create-job" element={<CreateJob />} />
+                <Route path="job/:jobId" element={<JobDetailPage />} />
                 <Route path="job/:jobId/:filter" element={<JobDetailPage />} />
               </Route>
 

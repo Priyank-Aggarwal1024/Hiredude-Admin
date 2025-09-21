@@ -119,7 +119,7 @@ function Application() {
               {jobs.map((row, idx) => (
                 <div
                   key={idx}
-                  className="min-w-[1780px] grid grid-cols-[1.5fr_2fr_2fr_1fr_1fr_1fr_1fr_1fr_2fr_1.5fr_1fr] border-b border-gray-100 [&:hover]:bg-gray-50"
+                  className="min-w-[1780px] grid grid-cols-[1.5fr_2fr_2fr_1fr_1fr_1fr_1fr_1fr_2fr_1.5fr_1fr] border-b border-gray-100 hover:bg-gray-50"
                 >
                   <div className="px-4 h-12 flex items-center justify-center">
                     <span className="text-slate-700 text-sm text-center">

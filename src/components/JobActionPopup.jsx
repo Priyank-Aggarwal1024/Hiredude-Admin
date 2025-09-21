@@ -21,7 +21,7 @@ const JobActionPopup = ({
     <a
       href={link}
       rel="noopener noreferrer"
-      className="group cursor-pointer w-full px-2 py-1.5 rounded-md flex justify-between items-center text-slate-800 text-sm font-medium [&:hover]:bg-slate-100 transition"
+      className="group cursor-pointer w-full px-2 py-1.5 rounded-md flex justify-between items-center text-slate-800 text-sm font-medium hover:bg-slate-100 transition"
     >
       <span>{label}</span>
       <img
@@ -57,14 +57,14 @@ const JobActionPopup = ({
       <div className="p-1 bg-white border-t border-slate-200 flex flex-col">
         <button
           onClick={onEdit}
-          className="w-full cursor-pointer px-2 py-1.5 rounded-md flex justify-start items-center text-slate-800 text-sm font-medium [&:hover]:bg-slate-100 transition"
+          className="w-full cursor-pointer px-2 py-1.5 rounded-md flex justify-start items-center text-slate-800 text-sm font-medium hover:bg-slate-100 transition"
         >
           Edit
         </button>
 
         <button
           onClick={onDelete}
-          className="w-full cursor-pointer px-2 py-1.5 rounded-md flex justify-start items-center text-red-600 text-sm font-medium [&:hover]:bg-red-50 transition"
+          className="w-full cursor-pointer px-2 py-1.5 rounded-md flex justify-start items-center text-red-600 text-sm font-medium hover:bg-red-50 transition"
         >
           Delete
         </button>

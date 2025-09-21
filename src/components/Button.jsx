@@ -13,9 +13,9 @@ const Button = ({
 
   const variants = {
     primary: "bg-gradient-to-r from-[#4CB7A3] to-[#1D4ED8] text-white",
-    secondary: "bg-gray-200 text-[#1D293D] [&:hover]:bg-gray-300",
-    danger: "bg-red-500 text-white [&:hover]:bg-red-600",
-    outline: "border border-gray-300 text-[#1D293D] [&:hover]:bg-gray-100",
+    secondary: "bg-gray-200 text-[#1D293D] hover:bg-gray-300",
+    danger: "bg-red-500 text-white hover:bg-red-600",
+    outline: "border border-gray-300 text-[#1D293D] hover:bg-gray-100",
   };
 
   return (

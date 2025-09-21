@@ -136,9 +136,7 @@ function Login() {
             type="submit"
             disabled={isLoading}
             className={`cursor-pointer h-16 px-9 py-5 bg-gradient-to-r from-[#4cb7a3] to-blue-700 rounded-xl inline-flex justify-center items-center gap-4 w-full overflow-hidden ${
-              isLoading
-                ? "opacity-50 cursor-not-allowed"
-                : "[&:hover]:opacity-90"
+              isLoading ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"
             }`}
           >
             <span className="text-white text-lg font-semibold leading-loose">

@@ -84,8 +84,8 @@ function Signup() {
     dispatch(setOtp(e.target.value));
   };
   return (
-    <div className="min-h-screen overflow-y-auto w-full overflow-x-hidden flex items-center justify-center bg-[#F8FAFC] gap-[45px] flex-col p-4">
-      <div className="flex flex-col gap-3 items-center">
+    <div className="min-h-screen overflow-y-auto w-full overflow-x-hidden flex items-center justify-center bg-[#F8FAFC] gap-[36px] flex-col p-4">
+      <div className="flex flex-col gap-0 items-center">
         <img src={logo} alt="Logo Hiredude" />
         <div className="opacity-50 text-center justify-start text-black text-2xl font-medium font-['Inter'] leading-loose">
           Admin Dashboard
@@ -181,9 +181,7 @@ function Signup() {
               type="submit"
               disabled={isLoading}
               className={`h-16 cursor-pointer px-9 py-5 bg-gradient-to-r from-[#4cb7a3] to-blue-700 rounded-xl inline-flex justify-center items-center gap-4 w-full overflow-hidden ${
-                isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : "[&:hover]:opacity-90"
+                isLoading ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"
               }`}
             >
               <span className="text-white text-lg font-semibold leading-loose">

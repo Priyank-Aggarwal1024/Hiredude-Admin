@@ -70,7 +70,7 @@ const Pagination = ({
         <button
           onClick={handlePrev}
           disabled={currentPage === 1}
-          className="px-3 py-2 text-sm rounded-lg border border-teal-500 text-teal-600 [&:hover]:bg-teal-50 disabled:opacity-50"
+          className="px-3 py-2 text-sm rounded-lg border border-teal-500 text-teal-600 hover:bg-teal-50 disabled:opacity-50"
         >
           Previous
         </button>
@@ -90,7 +90,7 @@ const Pagination = ({
               className={`w-9 h-9 flex items-center justify-center rounded-lg text-sm ${
                 currentPage === page
                   ? "bg-gradient-to-r from-teal-500 to-blue-600 text-white"
-                  : "bg-white border border-slate-200 text-teal-600 [&:hover]:bg-slate-100"
+                  : "bg-white border border-slate-200 text-teal-600 hover:bg-slate-100"
               }`}
             >
               {page}
@@ -101,7 +101,7 @@ const Pagination = ({
         <button
           onClick={handleNext}
           disabled={currentPage === totalPages}
-          className="px-3 py-2 text-sm rounded-lg border border-teal-500 text-teal-600 [&:hover]:bg-teal-50 disabled:opacity-50"
+          className="px-3 py-2 text-sm rounded-lg border border-teal-500 text-teal-600 hover:bg-teal-50 disabled:opacity-50"
         >
           Next
         </button>
